@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.artifex.mupdf"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+//
+//        ndk {
+//            moduleName "mupdf"
+//        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+
+//    externalNativeBuild {
+//        ndkBuild {
+//            path "src/main/jni/Android.mk"
+//        }
+//    }
+//    sourceSets {
+//        main {
+//            jni.srcDirs = []
+//            jniLibs.srcDir 'src/main/jniLibs' // This is not necessary unless you have precompiled libraries in your project.
+//        }
+//    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+}
